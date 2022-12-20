@@ -1,0 +1,20 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /mspago
+
+spring:
+  application:
+    name: ms-pago
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false # Because detection is disabled you have to set correct dialect by hand.
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+
